@@ -26,7 +26,7 @@ btn.addEventListener('click', (e) => {
     const amountValue = amount.value;
     const interestValue = interest.value;
     const yearsValue = years.value;
-    if (amountValue, interestValue, yearsValue) {
+    if (amountValue && interestValue && yearsValue) {
         loader.classList.toggle('loaderBlock');
         setTimeout(() => {
             error.classList.add('loaderNonBlock');
