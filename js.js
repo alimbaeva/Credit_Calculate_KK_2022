@@ -9,14 +9,11 @@ const totalInterest = document.querySelector('#total-interestIN');
 const loader = document.querySelector('#loader');
 const output = document.querySelector('#output');
 
-// console.log(monthlyPayment.value = '111111')
-// console.log(total)
-// console.log(totalInterest)
 
 function recalculation(amountValue, interestValue, yearsValue) {
     const totalInterestValue = ((amountValue * interestValue / 100) * yearsValue).toFixed(2);
     const totalValue = Number(totalInterestValue) + Number(amountValue);
-    const monthlyPaymentValue = (totalValue % (yearsValue * 12)).toFixed(2);
+    const monthlyPaymentValue = (totalValue / (yearsValue * 12)).toFixed(2);
     monthlyPayment.value = monthlyPaymentValue;
     total.value = totalValue;
     totalInterest.value = totalInterestValue;
