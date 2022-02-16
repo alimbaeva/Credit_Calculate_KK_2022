@@ -8,6 +8,7 @@ const total = document.querySelector('#totalIN');
 const totalInterest = document.querySelector('#total-interestIN');
 const loader = document.querySelector('#loader');
 const output = document.querySelector('#output');
+const error = document.querySelector('#error');
 
 
 function recalculation(amountValue, interestValue, yearsValue) {
@@ -25,12 +26,20 @@ btn.addEventListener('click', (e) => {
     const amountValue = amount.value;
     const interestValue = interest.value;
     const yearsValue = years.value;
-    loader.classList.toggle('loaderBlock');
-    setTimeout(() => {
+    if (amountValue, interestValue, yearsValue) {
         loader.classList.toggle('loaderBlock');
-        output.classList.remove('loaderNonBlock');
-        recalculation(amountValue, interestValue, yearsValue)
-    }, 800);
+        setTimeout(() => {
+            loader.classList.toggle('loaderBlock');
+            output.classList.remove('loaderNonBlock');
+            recalculation(amountValue, interestValue, yearsValue)
+        }, 800);
+    } else {
+        loader.classList.toggle('loaderBlock');
+        setTimeout(() => {
+            loader.classList.toggle('loaderBlock');
+            error.classList.remove('loaderNonBlock');
+        }, 800);
+    }
 
 
 })
