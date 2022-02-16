@@ -6,6 +6,8 @@ const btn = document.querySelector('.btn');
 const monthlyPayment = document.querySelector('#monthly-paymentIN');
 const total = document.querySelector('#totalIN');
 const totalInterest = document.querySelector('#total-interestIN');
+const loader = document.querySelector('#loader');
+const output = document.querySelector('#output');
 
 // console.log(monthlyPayment.value = '111111')
 // console.log(total)
@@ -26,7 +28,13 @@ btn.addEventListener('click', (e) => {
     const amountValue = amount.value;
     const interestValue = interest.value;
     const yearsValue = years.value;
-    recalculation(amountValue, interestValue, yearsValue);
+    loader.classList.toggle('loaderBlock');
+    setTimeout(() => {
+        loader.classList.toggle('loaderBlock');
+        output.classList.remove('loaderNonBlock');
+        recalculation(amountValue, interestValue, yearsValue)
+    }, 800);
+
 
 })
 
