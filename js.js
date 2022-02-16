@@ -29,6 +29,7 @@ btn.addEventListener('click', (e) => {
     if (amountValue, interestValue, yearsValue) {
         loader.classList.toggle('loaderBlock');
         setTimeout(() => {
+            error.classList.add('loaderNonBlock');
             loader.classList.toggle('loaderBlock');
             output.classList.remove('loaderNonBlock');
             recalculation(amountValue, interestValue, yearsValue)
